@@ -1,0 +1,35 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "home"
+  },
+  "logoInfo": {
+    "title": "SSO-SERVER",
+    "image": "",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "主页",
+          "href": "",
+          "icon": "fa fa-home",
+          "target": "_self",
+          "child": [
+            {
+              "title": "403",
+              "href": "403",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+﻿spring:
+  main:
+    allow-bean-definition-overriding: true
+  freemarker:
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+    request-context-attribute: request
+    prefer-file-system-access: false
+  redis:
+    database: 0 #Redis数据库索引（默认为0）
+    host: localhost
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8 #连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1ms #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 8 #连接池中的最大空闲连接
+        min-idle: 0
+
+
+server:
+  port: 8888
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /sso-client1
