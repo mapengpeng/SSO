@@ -25,6 +25,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @author mapp
  */
 @Configuration
+@SuppressWarnings("all")
 public class SSOWebConfig implements WebMvcConfigurer {
 
     @Autowired
@@ -32,7 +33,9 @@ public class SSOWebConfig implements WebMvcConfigurer {
 
     @Bean
     public TicketRegistry ticketRegistry() {
-        return new DefaultMapTicketRegistry();
+        DefaultMapTicketRegistry registry = new DefaultMapTicketRegistry();
+        registry.setCacheManager(cacheManager());
+        return registry;
     }
 
     @Bean
