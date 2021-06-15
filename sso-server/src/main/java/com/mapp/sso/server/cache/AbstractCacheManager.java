@@ -1,5 +1,8 @@
 package com.mapp.sso.server.cache;
 
+import cn.hutool.core.util.StrUtil;
+import com.mapp.sso.core.exception.SSOException;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -15,6 +18,9 @@ public abstract class AbstractCacheManager<K, V> implements CacheManager<K, V> {
 
     @Override
     public Cache<K, V> getCache(String name) {
+        if (StrUtil.isBlank(name)) {
+            throw new NullPointerException("cache name can not null!");
+        }
         Cache<K, V> cache = cacheMap.get(name);
         if (cache == null) {
             cache = createCache(name);
